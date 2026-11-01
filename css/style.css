@@ -1,0 +1,1086 @@
+/* =====================================================
+   Portfólio - Henrique Jobstraibizer
+   Folha de estilos principal
+
+   Ordem do arquivo:
+    1. Variáveis            9. Projetos
+    2. Base                10. Currículo
+    3. Componentes         11. Contato
+    4. Cabeçalho e menu    12. Rodapé
+    5. Seções              13. Animações
+    6. Início              14. Telas maiores
+    7. Sobre mim           15. Movimento reduzido
+    8. Tecnologias
+   ===================================================== */
+
+
+/* ---------- 1. Variáveis (cores e medidas usadas no site todo) ---------- */
+:root {
+    color-scheme: dark;
+
+    --fundo: #0b1020;
+    --fundo-alt: #0f1630;
+    --superficie: #141b34;
+    --superficie-2: #1b2444;
+    --borda: rgba(255, 255, 255, 0.09);
+
+    --texto: #e6e9f5;
+    --texto-suave: #a8b0cc;
+
+    --azul-claro: #93c5fd;
+    --degrade: linear-gradient(135deg, #2563eb, #7c3aed);
+
+    --sucesso: #6ee7b7;
+    --erro: #fca5a5;
+
+    --altura-cabecalho: 4.25rem;
+    --raio: 1rem;
+
+    --fonte: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    --fonte-codigo: ui-monospace, "Cascadia Code", Consolas, "Courier New", monospace;
+}
+
+
+/* ---------- 2. Base ---------- */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    /* Evita que o menu fixo cubra o título da seção ao clicar no menu */
+    scroll-padding-top: calc(var(--altura-cabecalho) + 1rem);
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: var(--fonte);
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--texto);
+    background: var(--fundo);
+    -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+p,
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    color: var(--azul-claro);
+}
+
+/* Garante que o atributo "hidden" esconda o elemento, mesmo com display definido no CSS */
+[hidden] {
+    display: none !important;
+}
+
+::selection {
+    background: #3b82f6;
+    color: #ffffff;
+}
+
+/* Contorno visível para quem navega pelo teclado (tecla Tab) */
+:focus-visible {
+    outline: 3px solid var(--azul-claro);
+    outline-offset: 3px;
+}
+
+
+/* ---------- 3. Componentes ---------- */
+.container {
+    width: min(100% - 2.5rem, 1120px);
+    margin-inline: auto;
+}
+
+/* Link "Pular para o conteúdo": fica escondido até receber o foco do teclado */
+.pular-link {
+    position: absolute;
+    left: 1rem;
+    top: -4rem;
+    z-index: 200;
+    padding: 0.6rem 1rem;
+    border-radius: 0.5rem;
+    background: #ffffff;
+    color: #0b1020;
+    font-weight: 600;
+    text-decoration: none;
+    transition: top 0.2s;
+}
+
+.pular-link:focus {
+    top: 1rem;
+}
+
+/* Ícones SVG: pegam a cor do texto ao redor */
+.icone {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    flex-shrink: 0;
+}
+
+/* Botões */
+.botao {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1.4rem;
+    border: 1px solid transparent;
+    border-radius: 0.75rem;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.2;
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s, background 0.2s, border-color 0.2s;
+}
+
+.botao:hover {
+    transform: translateY(-2px);
+}
+
+.botao:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.botao-primario {
+    background: var(--degrade);
+    color: #ffffff;
+    box-shadow: 0 8px 24px rgba(37, 99, 235, 0.3);
+}
+
+.botao-primario:hover {
+    box-shadow: 0 12px 30px rgba(124, 58, 237, 0.4);
+}
+
+.botao-secundario {
+    background: var(--superficie-2);
+    border-color: var(--borda);
+    color: var(--texto);
+}
+
+.botao-secundario:hover {
+    border-color: rgba(147, 197, 253, 0.5);
+}
+
+.botao-contorno {
+    background: transparent;
+    border-color: rgba(147, 197, 253, 0.5);
+    color: #bfdbfe;
+}
+
+.botao-contorno:hover {
+    background: rgba(59, 130, 246, 0.12);
+}
+
+.botao-pequeno {
+    padding: 0.5rem 0.9rem;
+    border-radius: 0.6rem;
+    font-size: 0.875rem;
+}
+
+/* Ícones de redes sociais (botões redondos) */
+.redes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1.75rem;
+}
+
+.icone-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    border: 1px solid var(--borda);
+    border-radius: 50%;
+    background: var(--superficie);
+    color: var(--texto-suave);
+    transition: transform 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.icone-link:hover {
+    transform: translateY(-3px);
+    border-color: rgba(147, 197, 253, 0.6);
+    color: #ffffff;
+}
+
+
+/* ---------- 4. Cabeçalho e menu ---------- */
+.cabecalho {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    height: var(--altura-cabecalho);
+    display: flex;
+    align-items: center;
+    background: rgba(11, 16, 32, 0.55);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid transparent;
+    transition: background 0.3s, border-color 0.3s;
+}
+
+/* Classe adicionada pelo JavaScript quando a página é rolada */
+.cabecalho.rolado {
+    background: rgba(11, 16, 32, 0.92);
+    border-bottom-color: var(--borda);
+}
+
+.cabecalho-conteudo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    color: #ffffff;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.logo-marca {
+    display: grid;
+    place-items: center;
+    width: 2.4rem;
+    height: 2.4rem;
+    border-radius: 0.7rem;
+    background: var(--degrade);
+    font-size: 0.95rem;
+    font-weight: 800;
+}
+
+/* O nome ao lado da marca só aparece quando há espaço */
+.logo-texto {
+    display: none;
+}
+
+/* Botão do menu (celular) */
+.menu-botao {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    width: 2.75rem;
+    height: 2.75rem;
+    border: 1px solid var(--borda);
+    border-radius: 0.7rem;
+    background: transparent;
+    cursor: pointer;
+}
+
+.menu-botao-barra {
+    width: 20px;
+    height: 2px;
+    border-radius: 2px;
+    background: #ffffff;
+    transition: transform 0.25s, opacity 0.25s;
+}
+
+/* As três barras viram um "X" quando o menu está aberto */
+.menu-botao[aria-expanded="true"] .menu-botao-barra:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.menu-botao[aria-expanded="true"] .menu-botao-barra:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-botao[aria-expanded="true"] .menu-botao-barra:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Menu no celular: painel que abre abaixo do cabeçalho */
+.menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    padding: 1rem 1.25rem 1.5rem;
+    border-bottom: 1px solid var(--borda);
+    background: rgba(11, 16, 32, 0.97);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-8px);
+    transition: opacity 0.2s, transform 0.2s, visibility 0.2s;
+}
+
+/* Classe adicionada pelo JavaScript ao abrir o menu */
+.menu.aberto {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+}
+
+.menu-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    list-style: none;
+}
+
+.menu-link {
+    display: block;
+    padding: 0.85rem 1rem;
+    border-radius: 0.6rem;
+    color: var(--texto-suave);
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.2s, background 0.2s;
+}
+
+.menu-link:hover,
+.menu-link.ativo {
+    background: rgba(255, 255, 255, 0.06);
+    color: #ffffff;
+}
+
+.menu-link-destaque {
+    margin-top: 0.5rem;
+    border: 1px solid rgba(147, 197, 253, 0.4);
+    color: #bfdbfe;
+    text-align: center;
+}
+
+
+/* ---------- 5. Seções ---------- */
+.secao {
+    padding-block: clamp(4rem, 8vw, 6.5rem);
+}
+
+.secao-alt {
+    background: var(--fundo-alt);
+}
+
+.secao-cabecalho {
+    max-width: 42rem;
+    margin-bottom: 2.75rem;
+}
+
+.secao-rotulo {
+    margin-bottom: 0.6rem;
+    color: var(--azul-claro);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.secao-titulo {
+    font-size: clamp(1.8rem, 3.2vw + 0.8rem, 2.6rem);
+    font-weight: 800;
+    line-height: 1.15;
+}
+
+/* Barrinha com degradê embaixo dos títulos */
+.secao-titulo::after {
+    content: "";
+    display: block;
+    width: 3.5rem;
+    height: 4px;
+    margin-top: 0.9rem;
+    border-radius: 999px;
+    background: var(--degrade);
+}
+
+.secao-intro {
+    margin-top: 1rem;
+    color: var(--texto-suave);
+    font-size: 1.05rem;
+}
+
+.aviso-noscript {
+    color: var(--texto-suave);
+}
+
+
+/* ---------- 6. Início (hero) ---------- */
+.hero {
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+    min-height: 100svh;
+    padding: calc(var(--altura-cabecalho) + 3rem) 0 4rem;
+    background:
+        radial-gradient(50rem 28rem at 90% -10%, rgba(124, 58, 237, 0.28), transparent 60%),
+        radial-gradient(45rem 28rem at 0% 25%, rgba(37, 99, 235, 0.22), transparent 60%),
+        var(--fundo);
+}
+
+.hero-conteudo {
+    display: grid;
+    gap: 3rem;
+    align-items: center;
+}
+
+.hero-saudacao {
+    margin-bottom: 0.5rem;
+    color: var(--azul-claro);
+    font-weight: 600;
+}
+
+.hero-nome {
+    color: #ffffff;
+    font-size: clamp(2.3rem, 6vw + 0.5rem, 4rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+}
+
+/* Nome com degradê no texto (se o navegador não suportar, fica branco) */
+@supports ((-webkit-background-clip: text) or (background-clip: text)) {
+    .hero-nome {
+        background: linear-gradient(135deg, #ffffff 20%, #a5b4fc 60%, #c4b5fd 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+}
+
+.hero-funcao {
+    margin-top: 0.75rem;
+    color: #c7d2fe;
+    font-size: clamp(1.05rem, 1.5vw + 0.6rem, 1.4rem);
+    font-weight: 600;
+}
+
+.hero-frase {
+    max-width: 36rem;
+    margin-top: 1.25rem;
+    color: var(--texto-suave);
+    font-size: 1.1rem;
+}
+
+.hero-botoes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 2rem;
+}
+
+/* Cartão no estilo "editor de código" */
+.hero-codigo {
+    overflow: hidden;
+    border: 1px solid var(--borda);
+    border-radius: var(--raio);
+    background: #0d1326;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+}
+
+.codigo-barra {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--borda);
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.codigo-bolinha {
+    width: 0.7rem;
+    height: 0.7rem;
+    border-radius: 50%;
+    background: #ff5f56;
+}
+
+.codigo-bolinha:nth-child(2) {
+    background: #ffbd2e;
+}
+
+.codigo-bolinha:nth-child(3) {
+    background: #27c93f;
+}
+
+.codigo-arquivo {
+    margin-left: 0.6rem;
+    color: var(--texto-suave);
+    font-family: var(--fonte-codigo);
+    font-size: 0.8rem;
+}
+
+.hero-codigo pre {
+    margin: 0;
+    padding: 1.25rem 1.4rem;
+    overflow-x: auto;
+    color: #e2e8f0;
+    font-family: var(--fonte-codigo);
+    font-size: 0.88rem;
+    line-height: 1.75;
+}
+
+.hero-codigo code {
+    font-family: inherit;
+}
+
+/* Cores do "código" decorativo */
+.c-chave { color: #c4b5fd; }
+.c-var   { color: #93c5fd; }
+.c-prop  { color: #7dd3fc; }
+.c-str   { color: #86efac; }
+.c-ponto { color: #94a3b8; }
+
+
+/* ---------- 7. Sobre mim ---------- */
+.sobre-grade {
+    display: grid;
+    gap: 2.5rem;
+}
+
+.sobre-texto p {
+    margin-bottom: 1.1rem;
+    color: var(--texto-suave);
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
+
+.sobre-lateral {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.foto-perfil {
+    max-width: 20rem;
+}
+
+.foto-perfil img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border: 1px solid var(--borda);
+    border-radius: 1.25rem;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.4);
+}
+
+.fatos {
+    display: grid;
+    gap: 0.9rem;
+    list-style: none;
+}
+
+.fato {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    padding: 1rem 1.25rem;
+    border: 1px solid var(--borda);
+    border-left: 4px solid #6366f1;
+    border-radius: 0.9rem;
+    background: var(--superficie);
+}
+
+.fato-rotulo {
+    color: var(--azul-claro);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.fato-valor {
+    font-weight: 600;
+}
+
+
+/* ---------- 8. Tecnologias (cards montados pelo JavaScript) ---------- */
+.grade-tecnologias {
+    display: grid;
+    gap: 2.5rem;
+}
+
+.tec-grupo-titulo {
+    margin-bottom: 1rem;
+    color: var(--texto-suave);
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.tec-lista {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(8.5rem, 1fr));
+    gap: 1rem;
+    list-style: none;
+}
+
+.tec-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 1.25rem 0.75rem;
+    border: 1px solid var(--borda);
+    border-radius: var(--raio);
+    background: var(--superficie);
+    text-align: center;
+    transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
+}
+
+.tec-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(147, 197, 253, 0.5);
+    box-shadow: 0 14px 30px rgba(37, 99, 235, 0.18);
+}
+
+.tec-icone {
+    color: var(--texto);
+    font-size: 2.6rem;
+    line-height: 1;
+}
+
+.tec-nome {
+    font-weight: 600;
+}
+
+.tec-nivel {
+    padding: 0.15rem 0.65rem;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.07);
+    color: var(--texto-suave);
+    font-size: 0.75rem;
+}
+
+
+/* ---------- 9. Projetos (cards montados pelo JavaScript) ---------- */
+.grade-projetos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 20rem), 1fr));
+    gap: 1.5rem;
+}
+
+.projeto-card {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border: 1px solid var(--borda);
+    border-radius: 1.1rem;
+    background: var(--superficie);
+    transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
+}
+
+.projeto-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(147, 197, 253, 0.35);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+}
+
+.projeto-midia {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    aspect-ratio: 16 / 9;
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.35), rgba(124, 58, 237, 0.35));
+}
+
+.projeto-imagem {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Quando o projeto não tem imagem, mostra as iniciais */
+.projeto-placeholder {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 2.2rem;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+}
+
+/* Etiqueta "Exemplo" nos projetos ilustrativos */
+.projeto-selo {
+    position: absolute;
+    top: 0.75rem;
+    left: 0.75rem;
+    padding: 0.25rem 0.65rem;
+    border-radius: 999px;
+    background: #fbbf24;
+    color: #1f1300;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.projeto-corpo {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 1.25rem;
+}
+
+.projeto-titulo {
+    font-size: 1.2rem;
+    line-height: 1.3;
+}
+
+.projeto-descricao {
+    color: var(--texto-suave);
+    font-size: 0.95rem;
+    line-height: 1.65;
+}
+
+.projeto-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    list-style: none;
+}
+
+.tag {
+    padding: 0.2rem 0.65rem;
+    border: 1px solid rgba(96, 165, 250, 0.25);
+    border-radius: 999px;
+    background: rgba(96, 165, 250, 0.12);
+    color: #bfdbfe;
+    font-size: 0.75rem;
+}
+
+.projeto-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-top: auto;
+    padding-top: 0.5rem;
+}
+
+
+/* ---------- 10. Currículo ---------- */
+.curriculo-cartao {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    padding: clamp(1.5rem, 4vw, 2.5rem);
+    border: 1px solid rgba(147, 197, 253, 0.2);
+    border-radius: 1.25rem;
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.18), rgba(124, 58, 237, 0.18));
+}
+
+.curriculo-texto {
+    flex: 1 1 20rem;
+    max-width: 36rem;
+}
+
+
+/* ---------- 11. Contato ---------- */
+.contato-grade {
+    display: grid;
+    gap: 2rem;
+}
+
+.contato-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+}
+
+.contato-link {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.25rem;
+    border: 1px solid var(--borda);
+    border-radius: var(--raio);
+    background: var(--superficie);
+    color: var(--texto);
+    text-decoration: none;
+    transition: transform 0.2s, border-color 0.2s;
+}
+
+.contato-link:hover {
+    transform: translateX(4px);
+    border-color: rgba(147, 197, 253, 0.5);
+}
+
+.contato-link .icone {
+    color: var(--azul-claro);
+}
+
+.contato-link-texto {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.contato-link-titulo {
+    font-weight: 700;
+}
+
+.contato-link-detalhe {
+    color: var(--texto-suave);
+    font-size: 0.875rem;
+    overflow-wrap: anywhere;
+}
+
+/* Formulário */
+.formulario {
+    padding: clamp(1.25rem, 3vw, 2rem);
+    border: 1px solid var(--borda);
+    border-radius: 1.25rem;
+    background: var(--superficie);
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    margin-bottom: 1.1rem;
+}
+
+.campo label {
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.obrigatorio {
+    color: #fda4af;
+}
+
+.campo input,
+.campo textarea {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 0.7rem;
+    background: #0d1326;
+    color: var(--texto);
+    font-family: inherit;
+    font-size: 1rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.campo textarea {
+    min-height: 9rem;
+    resize: vertical;
+}
+
+.campo input:focus,
+.campo textarea:focus {
+    outline: none;
+    border-color: #60a5fa;
+    box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.3);
+}
+
+/* Campo com erro (o JavaScript marca com aria-invalid="true") */
+.campo input[aria-invalid="true"],
+.campo textarea[aria-invalid="true"] {
+    border-color: #f87171;
+}
+
+.erro-campo {
+    min-height: 1.2em;
+    color: var(--erro);
+    font-size: 0.85rem;
+}
+
+/* Campo-armadilha contra robôs: invisível para pessoas */
+.campo-oculto {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+.formulario .botao {
+    width: 100%;
+}
+
+.form-status {
+    min-height: 1.5em;
+    margin-top: 1rem;
+    font-weight: 600;
+}
+
+.form-status.sucesso {
+    color: var(--sucesso);
+}
+
+.form-status.erro {
+    color: var(--erro);
+}
+
+
+/* ---------- 12. Rodapé ---------- */
+.rodape {
+    padding: 2rem 0;
+    border-top: 1px solid var(--borda);
+    background: #080c1a;
+}
+
+.rodape-conteudo {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.rodape-copy {
+    font-size: 0.9rem;
+}
+
+.rodape-msg {
+    color: var(--texto-suave);
+    font-size: 0.85rem;
+}
+
+.rodape .redes {
+    margin-top: 0;
+}
+
+
+/* ---------- 13. Animações ---------- */
+/* Blocos que aparecem suavemente ao rolar a página.
+   O JavaScript adiciona "revelar" e depois "visivel", e remove as duas
+   ao terminar, para não atrapalhar os efeitos de passar o mouse. */
+.revelar {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.revelar.visivel {
+    opacity: 1;
+    transform: none;
+}
+
+/* Entrada da seção inicial ao abrir a página */
+@keyframes entrada {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+.hero-texto {
+    animation: entrada 0.8s ease both;
+}
+
+.hero-codigo {
+    animation: entrada 0.8s ease 0.2s both;
+}
+
+
+/* ---------- 14. Telas maiores (a partir de 880px) ---------- */
+@media (min-width: 880px) {
+
+    /* Menu horizontal no topo, sem o botão do celular */
+    .menu-botao {
+        display: none;
+    }
+
+    .menu {
+        position: static;
+        padding: 0;
+        border: none;
+        background: none;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+    }
+
+    .menu-lista {
+        flex-direction: row;
+        align-items: center;
+        gap: 0.25rem;
+    }
+
+    .menu-link {
+        padding: 0.5rem 0.85rem;
+    }
+
+    .menu-link-destaque {
+        margin-top: 0;
+        margin-left: 0.5rem;
+    }
+
+    .logo-texto {
+        display: inline;
+    }
+
+    /* Colunas lado a lado */
+    .hero-conteudo {
+        grid-template-columns: 1.1fr 0.9fr;
+    }
+
+    .sobre-grade {
+        grid-template-columns: 1.4fr 1fr;
+        align-items: start;
+    }
+
+    .contato-grade {
+        grid-template-columns: 0.9fr 1.1fr;
+        align-items: start;
+    }
+}
+
+/* Celulares pequenos: botões ocupam a largura toda */
+@media (max-width: 480px) {
+    .hero-botoes .botao {
+        flex: 1 1 100%;
+    }
+
+    .hero-codigo pre {
+        font-size: 0.78rem;
+    }
+}
+
+
+/* ---------- 15. Movimento reduzido ---------- */
+/* Para quem desativou as animações no sistema (acessibilidade) */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    .revelar {
+        opacity: 1;
+        transform: none;
+    }
+}

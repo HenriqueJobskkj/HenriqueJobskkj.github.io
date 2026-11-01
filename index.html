@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Título e descrição que aparecem no Google e na aba do navegador -->
+    <title>Henrique Jobstraibizer | Portfólio de Desenvolvimento Web e Dados</title>
+    <meta name="description" content="Portfólio de Henrique Jobstraibizer, estudante de Sistemas de Informação em busca de estágio em TI. Desenvolvimento web, SQL, Excel, Power BI e SAP.">
+    <meta name="author" content="Henrique Jobstraibizer">
+    <meta name="theme-color" content="#0b1020">
+
+    <!-- Pré-visualização ao compartilhar o link em redes sociais (Open Graph) -->
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:title" content="Henrique Jobstraibizer | Portfólio">
+    <meta property="og:description" content="Estudante de Sistemas de Informação em busca de estágio em TI. Veja meus projetos, tecnologias e currículo.">
+
+    <!-- Ícone da aba do navegador -->
+    <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+
+    <!-- Fonte Inter (Google Fonts) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Ícones das tecnologias (Devicon, versão fixa) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/devicon.min.css">
+
+    <!-- Nosso visual -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Nossos scripts. O "defer" faz o navegador carregá-los depois de ler a página.
+         A ordem importa: primeiro os dados, depois o script que usa os dados. -->
+    <script src="js/dados.js" defer></script>
+    <script src="js/script.js" defer></script>
+</head>
+
+<body>
+
+    <!-- Biblioteca de ícones: desenhados uma vez aqui e reaproveitados pela página toda.
+         (ícones no estilo Feather Icons, licença MIT) -->
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+        <symbol id="icone-github" viewBox="0 0 24 24">
+            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+        </symbol>
+        <symbol id="icone-linkedin" viewBox="0 0 24 24">
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+            <rect x="2" y="9" width="4" height="12"></rect>
+            <circle cx="4" cy="4" r="2"></circle>
+        </symbol>
+        <symbol id="icone-email" viewBox="0 0 24 24">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+            <polyline points="22,6 12,13 2,6"></polyline>
+        </symbol>
+        <symbol id="icone-whatsapp" viewBox="0 0 24 24">
+            <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+        </symbol>
+        <symbol id="icone-download" viewBox="0 0 24 24">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="7 10 12 15 17 10"></polyline>
+            <line x1="12" y1="15" x2="12" y2="3"></line>
+        </symbol>
+        <symbol id="icone-seta" viewBox="0 0 24 24">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+        </symbol>
+        <symbol id="icone-externo" viewBox="0 0 24 24">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+            <polyline points="15 3 21 3 21 9"></polyline>
+            <line x1="10" y1="14" x2="21" y2="3"></line>
+        </symbol>
+        <symbol id="icone-tabela" viewBox="0 0 24 24">
+            <rect x="3" y="3" width="7" height="7"></rect>
+            <rect x="14" y="3" width="7" height="7"></rect>
+            <rect x="14" y="14" width="7" height="7"></rect>
+            <rect x="3" y="14" width="7" height="7"></rect>
+        </symbol>
+        <symbol id="icone-grafico" viewBox="0 0 24 24">
+            <line x1="18" y1="20" x2="18" y2="10"></line>
+            <line x1="12" y1="20" x2="12" y2="4"></line>
+            <line x1="6" y1="20" x2="6" y2="14"></line>
+        </symbol>
+        <symbol id="icone-camadas" viewBox="0 0 24 24">
+            <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+            <polyline points="2 17 12 22 22 17"></polyline>
+            <polyline points="2 12 12 17 22 12"></polyline>
+        </symbol>
+    </svg>
+
+    <!-- Link para quem navega pelo teclado ou leitor de tela pular direto ao conteúdo -->
+    <a class="pular-link" href="#conteudo">Pular para o conteúdo</a>
+
+    <!-- ===================== CABEÇALHO E MENU ===================== -->
+    <header class="cabecalho" id="cabecalho">
+        <div class="container cabecalho-conteudo">
+
+            <a class="logo" href="#inicio" aria-label="Henrique Jobstraibizer, ir para o início">
+                <span class="logo-marca">HJ</span>
+                <span class="logo-texto">Henrique Jobstraibizer</span>
+            </a>
+
+            <!-- Botão do menu (aparece só no celular) -->
+            <button class="menu-botao" id="menu-botao" type="button"
+                    aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-principal">
+                <span class="menu-botao-barra"></span>
+                <span class="menu-botao-barra"></span>
+                <span class="menu-botao-barra"></span>
+            </button>
+
+            <nav class="menu" id="menu-principal" aria-label="Menu principal">
+                <ul class="menu-lista">
+                    <li><a class="menu-link" href="#inicio">Início</a></li>
+                    <li><a class="menu-link" href="#sobre">Sobre mim</a></li>
+                    <li><a class="menu-link" href="#tecnologias">Tecnologias</a></li>
+                    <li><a class="menu-link" href="#projetos">Projetos</a></li>
+                    <li><a class="menu-link" href="#curriculo">Currículo</a></li>
+                    <li><a class="menu-link menu-link-destaque" href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+
+        </div>
+    </header>
+
+    <main id="conteudo">
+
+        <!-- ===================== INÍCIO ===================== -->
+        <section id="inicio" class="secao hero" aria-labelledby="titulo-inicio">
+            <div class="container hero-conteudo">
+
+                <div class="hero-texto">
+                    <p class="hero-saudacao">Olá, eu sou</p>
+                    <h1 id="titulo-inicio" class="hero-nome">Henrique Jobstraibizer</h1>
+                    <p class="hero-funcao">Estudante de Sistemas de Informação · Desenvolvimento Web e Dados</p>
+                    <p class="hero-frase">
+                        Atuo na logística, tenho formação técnica em Eletromecânica e estou construindo
+                        minha carreira em tecnologia, com foco em desenvolvimento web, banco de dados e
+                        dashboards, aprendendo na prática com projetos reais.
+                    </p>
+
+                    <div class="hero-botoes">
+                        <a class="botao botao-primario" href="#projetos">
+                            Ver meus projetos
+                            <svg class="icone" width="20" height="20" aria-hidden="true" focusable="false"><use href="#icone-seta"></use></svg>
+                        </a>
+                        <a class="botao botao-secundario" href="assets/curriculo.pdf" download="Curriculo-Henrique-Jobstraibizer.pdf">
+                            <svg class="icone" width="20" height="20" aria-hidden="true" focusable="false"><use href="#icone-download"></use></svg>
+                            Baixar currículo
+                        </a>
+                        <a class="botao botao-contorno" href="#contato">Entrar em contato</a>
+                    </div>
+
+                    <!-- Links de redes sociais: o JavaScript preenche os endereços e
+                         esconde os que estiverem vazios no dados.js -->
+                    <div class="redes">
+                        <a class="icone-link" data-link="github" href="#" hidden target="_blank" rel="noopener noreferrer" aria-label="GitHub (abre em outra aba)">
+                            <svg class="icone" width="22" height="22" aria-hidden="true" focusable="false"><use href="#icone-github"></use></svg>
+                        </a>
+                        <a class="icone-link" data-link="linkedin" href="#" hidden target="_blank" rel="noopener noreferrer" aria-label="LinkedIn (abre em outra aba)">
+                            <svg class="icone" width="22" height="22" aria-hidden="true" focusable="false"><use href="#icone-linkedin"></use></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Cartão decorativo, no estilo de um editor de código -->
+                <div class="hero-codigo" aria-hidden="true">
+                    <div class="codigo-barra">
+                        <span class="codigo-bolinha"></span>
+                        <span class="codigo-bolinha"></span>
+                        <span class="codigo-bolinha"></span>
+                        <span class="codigo-arquivo">henrique.js</span>
+                    </div>
+<pre><code><span class="c-chave">const</span> <span class="c-var">henrique</span> <span class="c-ponto">=</span> <span class="c-ponto">{</span>
+  <span class="c-prop">formacao</span><span class="c-ponto">:</span> <span class="c-str">"Sistemas de Informação"</span><span class="c-ponto">,</span>
+  <span class="c-prop">base</span><span class="c-ponto">:</span> <span class="c-str">"Eletromecânica (SENAI)"</span><span class="c-ponto">,</span>
+  <span class="c-prop">foco</span><span class="c-ponto">:</span> <span class="c-ponto">[</span><span class="c-str">"Front-end"</span><span class="c-ponto">,</span> <span class="c-str">"Back-end"</span><span class="c-ponto">,</span> <span class="c-str">"Full Stack"</span><span class="c-ponto">],</span>
+  <span class="c-prop">linguagens</span><span class="c-ponto">:</span> <span class="c-ponto">[</span><span class="c-str">"Python"</span><span class="c-ponto">,</span> <span class="c-str">"JavaScript"</span><span class="c-ponto">,</span> <span class="c-str">"C#"</span><span class="c-ponto">,</span> <span class="c-str">"C++"</span><span class="c-ponto">],</span>
+  <span class="c-prop">dados</span><span class="c-ponto">:</span> <span class="c-ponto">[</span><span class="c-str">"SQL"</span><span class="c-ponto">,</span> <span class="c-str">"Power BI"</span><span class="c-ponto">,</span> <span class="c-str">"Excel"</span><span class="c-ponto">,</span> <span class="c-str">"SAP"</span><span class="c-ponto">],</span>
+  <span class="c-prop">objetivo</span><span class="c-ponto">:</span> <span class="c-str">"Estágio em TI ou Dev Júnior"</span><span class="c-ponto">,</span>
+<span class="c-ponto">};</span></code></pre>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ===================== SOBRE MIM ===================== -->
+        <section id="sobre" class="secao secao-alt" aria-labelledby="titulo-sobre">
+            <div class="container">
+
+                <div class="secao-cabecalho" data-revelar>
+                    <p class="secao-rotulo">Conheça minha história</p>
+                    <h2 id="titulo-sobre" class="secao-titulo">Sobre mim</h2>
+                </div>
+
+                <div class="sobre-grade">
+
+                    <div class="sobre-texto" data-revelar>
+                        <p>
+                            Sou estudante de Sistemas de Informação e tenho formação técnica em
+                            Eletromecânica pelo SENAI. Atualmente, trabalho na AB Mauri, na área de
+                            logística, e estou fazendo a transição da minha carreira para a área de tecnologia.
+                        </p>
+                        <p>
+                            Na área de dados e sistemas, tenho experiência com Excel, em nível intermediário,
+                            e com Power BI, onde já montei dashboards. Também uso SQL Server para organizar e
+                            consultar informações nos meus projetos e tenho conhecimento em SAP.
+                        </p>
+                        <p>
+                            No desenvolvimento, tenho conhecimento em Python, JavaScript, C# e C++ e uso Flask,
+                            HTML e CSS nos meus projetos web, com interesse em Front-end, Back-end e Full Stack.
+                            Meu projeto mais completo é o Sistema de Controle de Estoque, que reúne banco de
+                            dados, regras de negócio, dashboard com gráficos e relatórios, um tema que dialoga
+                            com a área de logística em que atuo.
+                        </p>
+                        <p>
+                            Estou em busca de uma oportunidade de estágio em TI ou como desenvolvedor júnior
+                            para começar minha carreira na área, unindo programação, dados e a vivência que
+                            tenho em logística, e continuo estudando novas tecnologias.
+                        </p>
+                    </div>
+
+                    <div class="sobre-lateral" data-revelar>
+                        <!-- A foto só aparece se você informar o arquivo no dados.js -->
+                        <div id="foto-perfil" class="foto-perfil" hidden></div>
+
+                        <ul class="fatos">
+                            <li class="fato">
+                                <span class="fato-rotulo">Formação</span>
+                                <span class="fato-valor">Sistemas de Informação (cursando)</span>
+                            </li>
+                            <li class="fato">
+                                <span class="fato-rotulo">Formação técnica</span>
+                                <span class="fato-valor">Eletromecânica · SENAI</span>
+                            </li>
+                            <li class="fato">
+                                <span class="fato-rotulo">Atuação atual</span>
+                                <span class="fato-valor">Logística · AB Mauri</span>
+                            </li>
+                            <li class="fato">
+                                <span class="fato-rotulo">Dados e sistemas</span>
+                                <span class="fato-valor">Excel (intermediário) · Power BI · SQL Server · SAP</span>
+                            </li>
+                            <li class="fato">
+                                <span class="fato-rotulo">Desenvolvimento</span>
+                                <span class="fato-valor">Python · JavaScript · C# · C++ · HTML · CSS · Flask</span>
+                            </li>
+                            <li class="fato">
+                                <span class="fato-rotulo">Objetivo</span>
+                                <span class="fato-valor">Estágio em TI ou Desenvolvedor Júnior</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================== TECNOLOGIAS ===================== -->
+        <section id="tecnologias" class="secao" aria-labelledby="titulo-tecnologias">
+            <div class="container">
+
+                <div class="secao-cabecalho" data-revelar>
+                    <p class="secao-rotulo">Habilidades</p>
+                    <h2 id="titulo-tecnologias" class="secao-titulo">Tecnologias</h2>
+                    <p class="secao-intro">
+                        Tecnologias com as quais já tenho contato e que uso nos meus estudos e projetos.
+                    </p>
+                </div>
+
+                <!-- O JavaScript monta os cards aqui, a partir do dados.js -->
+                <div id="lista-tecnologias" class="grade-tecnologias">
+                    <noscript><p class="aviso-noscript">Ative o JavaScript para ver as tecnologias.</p></noscript>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ===================== PROJETOS ===================== -->
+        <section id="projetos" class="secao secao-alt" aria-labelledby="titulo-projetos">
+            <div class="container">
+
+                <div class="secao-cabecalho" data-revelar>
+                    <p class="secao-rotulo">Portfólio</p>
+                    <h2 id="titulo-projetos" class="secao-titulo">Meus projetos</h2>
+                    <p class="secao-intro">
+                        Projetos que desenvolvo para praticar e evoluir na prática.
+                    </p>
+                </div>
+
+                <!-- O JavaScript monta os cards aqui, a partir do dados.js -->
+                <div id="lista-projetos" class="grade-projetos">
+                    <noscript><p class="aviso-noscript">Ative o JavaScript para ver os projetos.</p></noscript>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ===================== CURRÍCULO ===================== -->
+        <section id="curriculo" class="secao" aria-labelledby="titulo-curriculo">
+            <div class="container">
+
+                <div class="curriculo-cartao" data-revelar>
+                    <div class="curriculo-texto">
+                        <p class="secao-rotulo">Currículo</p>
+                        <h2 id="titulo-curriculo" class="secao-titulo">Quer conhecer melhor minha trajetória?</h2>
+                        <p class="secao-intro">
+                            Baixe meu currículo em PDF e veja minha formação, meus projetos e minhas informações de contato.
+                        </p>
+                    </div>
+
+                    <a class="botao botao-primario" href="assets/curriculo.pdf" download="Curriculo-Henrique-Jobstraibizer.pdf">
+                        <svg class="icone" width="20" height="20" aria-hidden="true" focusable="false"><use href="#icone-download"></use></svg>
+                        Baixar currículo (PDF)
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ===================== CONTATO ===================== -->
+        <section id="contato" class="secao secao-alt" aria-labelledby="titulo-contato">
+            <div class="container">
+
+                <div class="secao-cabecalho" data-revelar>
+                    <p class="secao-rotulo">Contato</p>
+                    <h2 id="titulo-contato" class="secao-titulo">Vamos conversar?</h2>
+                    <p class="secao-intro">
+                        Envie uma mensagem pelo formulário ou use um dos canais abaixo.
+                        Respondo assim que possível.
+                    </p>
+                </div>
+
+                <div class="contato-grade">
+
+                    <!-- Canais de contato: o JavaScript preenche os endereços e esconde os vazios -->
+                    <div class="contato-info" data-revelar>
+                        <a class="contato-link" data-link="email" href="#" hidden>
+                            <svg class="icone" width="22" height="22" aria-hidden="true" focusable="false"><use href="#icone-email"></use></svg>
+                            <span class="contato-link-texto">
+                                <span class="contato-link-titulo">Enviar e-mail</span>
+                                <span class="contato-link-detalhe" data-texto="email"></span>
+                            </span>
+                        </a>
+
+                        <a class="contato-link" data-link="linkedin" href="#" hidden target="_blank" rel="noopener noreferrer">
+                            <svg class="icone" width="22" height="22" aria-hidden="true" focusable="false"><use href="#icone-linkedin"></use></svg>
+                            <span class="contato-link-texto">
+                                <span class="contato-link-titulo">LinkedIn</span>
+                                <span class="contato-link-detalhe">Conecte-se comigo (abre em outra aba)</span>
+                            </span>
+                        </a>
+
+                        <a class="contato-link" data-link="github" href="#" hidden target="_blank" rel="noopener noreferrer">
+                            <svg class="icone" width="22" height="22" aria-hidden="true" focusable="false"><use href="#icone-github"></use></svg>
+                            <span class="contato-link-texto">
+                                <span class="contato-link-titulo">GitHub</span>
+                                <span class="contato-link-detalhe">Veja meus códigos (abre em outra aba)</span>
+                            </span>
+                        </a>
+
+                        <a class="contato-link" data-link="whatsapp" href="#" hidden target="_blank" rel="noopener noreferrer">
+                            <svg class="icone" width="22" height="22" aria-hidden="true" focusable="false"><use href="#icone-whatsapp"></use></svg>
+                            <span class="contato-link-texto">
+                                <span class="contato-link-titulo">WhatsApp</span>
+                                <span class="contato-link-detalhe">Chame-me por mensagem (abre em outra aba)</span>
+                            </span>
+                        </a>
+
+                        <noscript><p class="aviso-noscript">Ative o JavaScript para ver os meios de contato.</p></noscript>
+                    </div>
+
+                    <!-- Formulário de contato.
+                         O "novalidate" desliga as mensagens padrão do navegador, porque o nosso
+                         JavaScript mostra mensagens próprias. O envio é feito pelo script.js. -->
+                    <form class="formulario" id="form-contato" method="POST" novalidate data-revelar>
+
+                        <div class="campo">
+                            <label for="nome">Nome <span class="obrigatorio" aria-hidden="true">*</span></label>
+                            <input type="text" id="nome" name="nome" autocomplete="name"
+                                   minlength="2" maxlength="100" required aria-describedby="erro-nome">
+                            <span class="erro-campo" id="erro-nome"></span>
+                        </div>
+
+                        <div class="campo">
+                            <label for="email">E-mail <span class="obrigatorio" aria-hidden="true">*</span></label>
+                            <input type="email" id="email" name="email" autocomplete="email"
+                                   maxlength="150" required aria-describedby="erro-email">
+                            <span class="erro-campo" id="erro-email"></span>
+                        </div>
+
+                        <div class="campo">
+                            <label for="assunto">Assunto <span class="obrigatorio" aria-hidden="true">*</span></label>
+                            <input type="text" id="assunto" name="assunto"
+                                   minlength="3" maxlength="120" required aria-describedby="erro-assunto">
+                            <span class="erro-campo" id="erro-assunto"></span>
+                        </div>
+
+                        <div class="campo">
+                            <label for="mensagem">Mensagem <span class="obrigatorio" aria-hidden="true">*</span></label>
+                            <textarea id="mensagem" name="mensagem" rows="6"
+                                      minlength="10" maxlength="2000" required aria-describedby="erro-mensagem"></textarea>
+                            <span class="erro-campo" id="erro-mensagem"></span>
+                        </div>
+
+                        <!-- Campo-armadilha contra robôs: fica escondido para pessoas.
+                             Quem preenche (robôs) tem a mensagem descartada. -->
+                        <div class="campo-oculto" aria-hidden="true">
+                            <label for="site">Não preencha este campo</label>
+                            <input type="text" id="site" name="_gotcha" tabindex="-1" autocomplete="off">
+                        </div>
+
+                        <button type="submit" class="botao botao-primario" id="form-botao">Enviar mensagem</button>
+
+                        <!-- Mensagem de sucesso ou erro do envio -->
+                        <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+                    </form>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===================== RODAPÉ ===================== -->
+    <footer class="rodape">
+        <div class="container rodape-conteudo">
+
+            <div class="rodape-texto">
+                <p class="rodape-copy">
+                    &copy; <span id="ano-atual">2026</span> Henrique Jobstraibizer. Todos os direitos reservados.
+                </p>
+                <p class="rodape-msg">Desenvolvido por mim com HTML, CSS e JavaScript.</p>
+            </div>
+
+            <div class="redes">
+                <a class="icone-link" data-link="github" href="#" hidden target="_blank" rel="noopener noreferrer" aria-label="GitHub (abre em outra aba)">
+                    <svg class="icone" width="22" height="22" aria-hidden="true" focusable="false"><use href="#icone-github"></use></svg>
+                </a>
+                <a class="icone-link" data-link="linkedin" href="#" hidden target="_blank" rel="noopener noreferrer" aria-label="LinkedIn (abre em outra aba)">
+                    <svg class="icone" width="22" height="22" aria-hidden="true" focusable="false"><use href="#icone-linkedin"></use></svg>
+                </a>
+                <a class="icone-link" data-link="email" href="#" hidden aria-label="Enviar e-mail">
+                    <svg class="icone" width="22" height="22" aria-hidden="true" focusable="false"><use href="#icone-email"></use></svg>
+                </a>
+                <a class="icone-link" data-link="whatsapp" href="#" hidden target="_blank" rel="noopener noreferrer" aria-label="WhatsApp (abre em outra aba)">
+                    <svg class="icone" width="22" height="22" aria-hidden="true" focusable="false"><use href="#icone-whatsapp"></use></svg>
+                </a>
+            </div>
+
+        </div>
+    </footer>
+
+</body>
+</html>
