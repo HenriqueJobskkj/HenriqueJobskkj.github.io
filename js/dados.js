@@ -92,19 +92,19 @@ const projetos = [
         imagem: "assets/img/favicon.svg",
         alt: "Tela inicial do portfólio",
         demo: "",
-        codigo: "",
+        codigo: "https://henriquejobskkj.github.io",
         exemplo: false
     },
 
     {
-        titulo: "Calculadora Web",
-        descricao: "Calculadora com interface moderna e as operações matemáticas básicas.",
+        titulo: "Relogio web",
+        descricao: "Relógio digital moderno desenvolvido com HTML, CSS e JavaScript, exibindo horas, minutos, segundos e data atual em tempo real. Possui design responsivo, animações suaves e alternância entre tema claro e escuro.",
         tecnologias: ["HTML", "CSS", "JavaScript"],
-        imagem: "",
-        alt: "",
+        imagem: "assets/img/CARDrelogio.png",
+        alt: "Tela do relogio web",
         demo: "",
-        codigo: "",
-        exemplo: true
+        codigo: "https://github.com/HenriqueJobskkj/Relogio-WEB",
+        exemplo: false
     },
 
     {
