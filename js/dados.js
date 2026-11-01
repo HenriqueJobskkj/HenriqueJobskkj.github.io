@@ -97,7 +97,7 @@ const projetos = [
     },
 
     {
-        titulo: "Relogio web",
+        titulo: "Relogio Web",
         descricao: "Relógio digital moderno desenvolvido com HTML, CSS e JavaScript, exibindo horas, minutos, segundos e data atual em tempo real. Possui design responsivo, animações suaves e alternância entre tema claro e escuro.",
         tecnologias: ["HTML", "CSS", "JavaScript"],
         imagem: "assets/img/CARDrelogio.png",
